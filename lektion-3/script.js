@@ -1,6 +1,5 @@
 
-function hello() {
-    const namn = document.getElementById('namn').value;
+function hello(namn) {
     let output = "";
 
     if (namn === "Fredrik" || namn === "Fredde") {
@@ -10,7 +9,12 @@ function hello() {
     } else {
         output = "Jag känner inte dig.";
     }
+    return output;
+}
 
-    document.getElementById('name-output').textContent = output;
+function helloHandler() {
+    const namn = document.getElementById('namn').value;
+    const helloOutput = hello(namn);
+    document.getElementById('name-output').textContent = helloOutput;
 }
 
