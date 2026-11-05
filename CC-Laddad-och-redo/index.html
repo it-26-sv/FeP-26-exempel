@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CC Laddad och redo</title>
+</head>
+
+<body>
+    <h3>CC Laddad och redo</h3>
+    <p>
+        <label for="user-name">Vad heter du?</label><br>
+        <input type="text" id="user-name" placeholder="Namn">
+    </p>
+    <p>
+        <label for="rest-level"> Hur utvilad känner du dig på en skala från 1-5?</label><br>
+        <input type="number" id="rest-level" placeholder="1-5">
+        <button type="button" onclick="calculate()">OK</button>
+    </p>
+    <p id="output">...</p>
+
+    <script>
+        function calculate() {
+            const userName = document.getElementById('user-name').value;
+            const restLevel = document.getElementById('rest-level').value;
+
+            //const result = restLevel*20;
+            const result = restLevel / 5 * 100;
+
+            document.getElementById('output').innerHTML = `
+                Hej ${userName}!
+                Ditt batteri har ${result}% laddning!
+            `;
+
+        }
+    </script>
+</body>
+
+</html>
