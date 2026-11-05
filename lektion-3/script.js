@@ -1,14 +1,16 @@
 
-const piName = "Pi";
-const piVal = 3.14159;
-
 function hello() {
-    //const namn = prompt("Vad heter du?");
     const namn = document.getElementById('namn').value;
-    //alert(`Hej ${namn}!`);
-    document.getElementById('name-output').textContent = `Hej ${namn}!`;
+    let output = "";
 
-    //document.getElementById('name-output2').innerHTML = `Hej <b>${namn}</b>!`;
-    console.log(`Hej ${namn}!`);
+    if (namn === "Fredrik" || namn === "Fredde") {
+        output = "Hej, du gillar JavaScript!";
+    } else if (namn === "Dennis") {
+        output = "Hej, du gillar robotar!";
+    } else {
+        output = "Jag känner inte dig.";
+    }
+
+    document.getElementById('name-output').textContent = output;
 }
 
