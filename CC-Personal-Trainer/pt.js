@@ -4,6 +4,7 @@ function pt() {
 
     const minutes = document.getElementById('minutes').value;
     let ptOutput = "";
+
     // guard statement
     if (minutes === '' || isNaN(minutes)) return alert('Inte ett giltigt tal!');
 
@@ -19,3 +20,8 @@ function pt() {
 
     document.getElementById('pt-output').textContent = ptOutput;
 }
+
+document.getElementById('btn-ok').addEventListener('click', function (evt) {
+    pt();
+    console.log(evt);
+});
