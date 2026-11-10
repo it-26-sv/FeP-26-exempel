@@ -17,6 +17,7 @@ console.log(colors);
 colors[3] = 'orange';
 console.log(colors);
 
+
 // split och join
 const str = "ett två tre";
 console.log(str);
@@ -27,3 +28,8 @@ console.log(joinedStr);
 
 const myElemId = 'listitem-5';
 console.log(Number(myElemId.split('-')[1]));
+
+// en array går bra att loopa!
+for (let i = 0; i < colors.length; i++) {
+    console.log(`${i}: ${colors[i]}`);
+}
