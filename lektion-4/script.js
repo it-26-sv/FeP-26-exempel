@@ -55,6 +55,7 @@ const colorObjArr = [
 for (let i = 0; i < colorObjArr.length; i++) {
     document.getElementById('colors').innerHTML += `
         <li style="background-color: ${colorObjArr[i].hex}">
+            ${i}:
             ${colorObjArr[i].name}
         </li>
     `;
