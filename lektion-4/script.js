@@ -33,3 +33,35 @@ console.log(Number(myElemId.split('-')[1]));
 for (let i = 0; i < colors.length; i++) {
     console.log(`${i}: ${colors[i]}`);
 }
+
+const person = {
+    name: "Linus",
+    age: 50,
+    likes: "Programmering",
+    colors: colors // man kan ha en array i ett objekt
+};
+console.log(`${person.name} gillar ${person.likes}`);
+// hakparenteser funkar också, används i specialfall
+console.log(`${person['name']} gillar ${person['likes']}`);
+
+const colorObjArr = [
+   { name: "Red", hex: "#ff0000" },
+   { name: "Green", hex: "#00ff00" },
+   { name: "Blue", hex: "#0000ff" },
+   { name: "Yellow", hex: "#ffff00" }
+];
+
+// Array av objekt är kraftfulla när man loopar dem!
+for (let i = 0; i < colorObjArr.length; i++) {
+    document.getElementById('colors').innerHTML += `
+        <li style="background-color: ${colorObjArr[i].hex}">
+            ${colorObjArr[i].name}
+        </li>
+    `;
+}
+
+/*
+const pageColor = 1;
+document.body.innerHTML = colorObjArr[pageColor].name;
+document.body.style.backgroundColor = colorObjArr[pageColor].hex;
+*/
