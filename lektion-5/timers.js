@@ -8,4 +8,7 @@ myTimer = setInterval(() => {
 }, 1000);
 
 const stopButton = document.getElementById('timer-stop');
-stopButton.addEventListener('click', () => clearInterval(myTimer));
+stopButton.addEventListener('click', () => {
+    clearInterval(myTimer);
+    myTimer = null;
+});
