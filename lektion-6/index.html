@@ -5,21 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lektion 6</title>
     <style type="text/css">
+        body {
+            cursor: url("./img/cursor-png-32692.png") 32 32, auto; 
+        }
+
         .lights {
             width: 50px;
             height: 50px;
             border: 1px solid black;
             margin-bottom: 2px;
             border-radius: 50%;
-            background-color: rgb(39, 39, 39);
+
+           
+        }
+        #container, #container-2 {
+            float: left;
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
     <div id="container">
-        <div class="lights"></div>
-        <div class="lights"></div>
-        <div class="lights"></div>
+        <div id="light-1" class="lights"></div>
+        <div id="light-2" class="lights"></div>
+        <div id="light-3" class="lights"></div>
+    </div>
+
+    <div id="container-2">
+        <div class="lights foo bar" data-color="red"></div>
+        <div class="lights" data-color="yellow"></div>
+        <div class="lights" data-color="lime"></div>
     </div>
     
     <script src="script.js"></script>
