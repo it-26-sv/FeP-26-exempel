@@ -19,23 +19,20 @@ function activateLight(lightNumber) {
     light.style.backgroundColor = COLORS[color]; // same as light.getAttribute("data-color")
 }
 
-setInterval(() => {
+/*setInterval(() => {
     const randomNumber = Math.ceil(Math.random() * 3);
     activateLight(randomNumber);
-}, 500); 
+}, 500); */
 
-/*
-
-// using recursion to create an acceleration effect
+// setTimeout med rekursion:
 function nextLight(delay) {
     if (delay < 100) delay = 100;
+    console.log(`delay: ${delay}`)
 
     const randomNumber = Math.ceil(Math.random() * 3);
     activateLight(randomNumber);
-    console.log(`delay: ${delay}`)
 
     setTimeout(() => nextLight(delay-50), delay);
 }
 nextLight(1000);
 
-*/
