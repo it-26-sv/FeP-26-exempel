@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lektion 7</title>
+</head>
+<body>
+    <p id="clock"></p>
+
+    <script>
+        const d = new Date();
+        console.log(`i dag är ${d.getDate()}.${d.getMonth()+1}.${d.getFullYear()}`);
+
+        const vappen = new Date(2027, 4, 1, 9, 30);
+        console.log(vappen);
+        console.log(vappen.toISOString());
+        console.log(vappen.toLocaleDateString()); // browserns default-locale
+
+        function updateClock() {
+            const d = new Date();
+
+            // lägg till nolla om talet är < 10
+            const h = String(d.getHours()).padStart(2, '0');
+            const min = String(d.getMinutes()).padStart(2, '0');
+            const sec = String(d.getSeconds()).padStart(2, '0');
+
+            document.getElementById('clock').textContent = `
+                ${h}:${min}:${sec}
+            `
+            //setTimeout(updateClock, 1000); // rekursion går också bra
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+
+
+    </script>
+</body>
+</html>
