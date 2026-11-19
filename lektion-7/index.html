@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lektion 7</title>
 </head>
+
 <body>
+    <!--<form method="post" action="form-handler.php">-->
+    <p id="form-output"></p>
+    <form method="post">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="pass" placeholder="Password">
+        <input type="range" min="0" max="100">
+        <input type="date"><br>
+        <select>
+            <option value="1">Ett</option>
+            <option value="2">Två</option>
+            <option>Tre</option>
+        </select>
+
+        <br><br>
+        <button id="btn-ok" type="button">OK</button><br>
+        <!--<button type="submit">Submit form</button>-->
+
+    </form>
+
     <p id="clock"></p>
 
     <script>
+        document.querySelectorAll('form > input, form > select').forEach(inp => {
+            inp.addEventListener('input', () => {
+                document.getElementById('form-output').innerHTML = `${inp.value}<br>`;
+            })
+        });
+
+
+        // datum och klockslag
         const d = new Date();
-        console.log(`i dag är ${d.getDate()}.${d.getMonth()+1}.${d.getFullYear()}`);
+        console.log(`i dag är ${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}`);
 
         const vappen = new Date(2027, 4, 1, 9, 30);
         console.log(vappen);
@@ -37,4 +66,5 @@
 
     </script>
 </body>
+
 </html>
