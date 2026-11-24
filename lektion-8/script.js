@@ -66,3 +66,12 @@ async function getInfo() {
 }
 getJoke();
 getInfo();
+
+/*
+
+async function getRecipe(recipeFile) {
+    // fetch.... recipeFile
+}
+getRecipe('soup');
+
+*/
