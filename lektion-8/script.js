@@ -38,12 +38,31 @@ console.log(3);
 
 
 async function getJoke() {
-    const resp = await fetch('https://icanhazdadjoke.com', {
-        headers: { "Accept": "text/plain" }
-    });
-    const jokeText = await resp.text();
-    console.log(jokeText);
+    try {
+        const resp = await fetch('https://icanhazdadjoke.com/123', {
+            headers: { "Accept": "text/plain" }
+        });
+        if (!resp.ok) throw new Error(`HTTP error: ${resp.status}`);
 
-    document.getElementById('joke').textContent = jokeText;
+        const jokeText = await resp.text();
+        console.log(jokeText);
+
+        document.getElementById('joke').textContent = jokeText;
+
+    } catch (error) {
+        console.log(error);
+        document.getElementById('joke').textContent = `
+            ERROR: Någonting gick snett!
+        `;
+
+    }
+
+}
+
+async function getInfo() {
+    const resp = await fetch('./info.txt');
+    document.getElementById('info').innerHTML = await resp.text();
+
 }
 getJoke();
+getInfo();
